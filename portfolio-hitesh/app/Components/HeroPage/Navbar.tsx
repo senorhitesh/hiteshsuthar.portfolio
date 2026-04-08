@@ -1,8 +1,7 @@
 "use client";
-
 import Image from "next/image";
 import { GitHubStars } from "@/components/github-stars";
-import DP from "@/public/L-DAY.svg";
+import DP from "@/public/icons/L-DAY.svg";
 import Link from "next/link";
 import { useState } from "react";
 import { MoonIcon, Sun } from "lucide-react";
@@ -11,7 +10,7 @@ const Navbar = () => {
   return (
     <div className="flex flex-1 w-full  flex-col items-center  border-t border-b  border-neutral-100 dark:bg-black sm:items-start">
       {/* Container */}
-      <div className="mx-auto relative w-xl border-neutral-200    border-r border-l">
+      <div className="mx-auto relative w-2xl border-neutral-200    border-r border-l">
         {" "}
         <div className="w-2 h-2 bg-white border-neutral-200 -top-1 -left-1 absolute border"></div>
         <div className="w-2 h-2 bg-white border-neutral-200 -top-1 -right-1 absolute border"></div>
@@ -27,24 +26,27 @@ const Navbar = () => {
           {/* Links */}
           <div className="font-mono flex gap-2 items-center text-neutral-600  text-[12px]">
             <Link
-              className="hover:text-neutral-800 text-neutral-500 transtion  hover:underline underline-offset-3"
+              className="hover:text-neutral-800 group relative text-neutral-500 transtion   underline-offset-3"
               href={"/components-page"}
             >
               {" "}
               <p>Components</p>
+              <div className="h-0.5 w-0 transition-all duration-700  group-hover:w-full absolute bg-neutral-800"></div>
             </Link>
             <Link
-              className="hover:text-neutral-800 text-neutral-500 transtion hover:underline underline-offset-3 "
-              href={"/blogs-page"}
+              className="hover:text-neutral-800 group relative text-neutral-500 transtion   underline-offset-3"
+              href={"/blogs"}
             >
               {" "}
               <p>Blogs</p>
+              <div className="h-0.5 w-0 transition-all duration-700  group-hover:w-full absolute bg-neutral-800"></div>
             </Link>
             <GitHubStars repo="senorhitesh/hiteshsuthar.portfolio" />|
             <button
               onClick={() => {
                 setisDay(!isDay);
               }}
+              className={`${isDay ? "rotate-180" : "rotate-10"} transition duration-300 ease-in-out`}
             >
               {isDay ? <Sun size={14} /> : <MoonIcon size={14} />}
             </button>
