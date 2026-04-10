@@ -1,4 +1,6 @@
 "use client";
+import BioComponent from "./Components/BioComponent";
+import Divider from "./Components/Divider";
 import Navbar from "./Components/HeroPage/Navbar";
 import Profile from "./Components/Profile/Profile";
 export default function Home() {
@@ -18,6 +20,9 @@ export default function Home() {
         ></div>
         {/* Profile */}
         <Profile />
+        <Divider />
+        {/* Bio */}
+        <BioComponent />
       </div>
     </>
   );

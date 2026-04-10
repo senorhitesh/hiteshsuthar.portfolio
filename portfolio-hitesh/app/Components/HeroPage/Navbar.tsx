@@ -46,7 +46,7 @@ const Navbar = () => {
               onClick={() => {
                 setisDay(!isDay);
               }}
-              className={`${isDay ? "rotate-180" : "rotate-10"} transition duration-300 ease-in-out`}
+              className={`${isDay ? "rotate-180 " : "rotate-10  "} transition duration-300 ease-in-out`}
             >
               {isDay ? <Sun size={14} /> : <MoonIcon size={14} />}
             </button>

@@ -36,10 +36,10 @@ const Profile = () => {
             <div className="px-3  overflow-hidden  border-neutral-200 h-fit w-full">
               <TextLoop>
                 <span className="font-mono font-light text-sm">
-                  Agentic Ai Developer
+                  Frotend React Dev
                 </span>
                 <span className="font-mono font-light text-sm">
-                  Crafting Prodcuts
+                  Crafting Experience
                 </span>
                 <span className="font-mono font-light text-sm">
                   Currently Cooking Something
