@@ -1,12 +1,4 @@
-import {
-  Building2,
-  Clock,
-  Code,
-  Copy,
-  LucideIcon,
-  Mail,
-  Map,
-} from "lucide-react";
+import { Building2, Code, Copy, LucideIcon, Mail, Map } from "lucide-react";
 
 const BioCard = ({
   Icon,
@@ -23,10 +15,10 @@ const BioCard = ({
   console.log(navigator.clipboard);
   return (
     <div className="flex group items-center gap-2">
-      <div className="w-6 text-neutral-600 h-6 rounded-md ring-2 ring-neutral-200  border border-neutral-50  flex items-center justify-center bg-gray-100">
+      <div className="w-6 text-neutral-600 h-6 rounded-md ring-2 ring-neutral-200 dark:ring-neutral-800 dark:border-neutral-900 dark:text-neutral-400 dark:bg-neutral-900 border border-neutral-50  flex items-center justify-center bg-gray-100">
         <Icon size={16} />
       </div>
-      <p className="text-sm text-neutral-900">
+      <p className="text-sm dark:text-neutral-300 text-neutral-900">
         {title}
         {underLineText && (
           <span className="hover:underline underline-offset-2">
@@ -39,7 +31,7 @@ const BioCard = ({
           onClick={() => {
             navigator.clipboard.writeText(textToCopy);
           }}
-          className="w-6 opacity-0 group-hover:opacity-100 transition  text-neutral-400 h-6 rounded-md hover:text-neutral-500    bg-white    flex items-center justify-center "
+          className="w-6 opacity-0 group-hover:opacity-100 transition  dark:border-neutral-900 text-neutral-400 h-6 rounded-md dark:text-neutral-400 dark:bg-neutral-900 border hover:text-neutral-500    bg-white    flex items-center justify-center "
         >
           <Copy size={16} />
         </div>
@@ -49,8 +41,8 @@ const BioCard = ({
 };
 const BioComponent = () => {
   return (
-    <div className="w-full border-b font-mono tracking-tight border-neutral-200">
-      <div className="mx-auto border-x gap-3 flex flex-col border-neutral-200 p-6 max-w-2xl">
+    <div className="w-full border-b font-mono tracking-tight dark:border-neutral-900 border-neutral-200">
+      <div className="mx-auto border-x gap-3 flex flex-col dark:border-neutral-900 border-neutral-200 p-6 max-w-2xl">
         <BioCard
           Icon={Code}
           title={"Frotend Intern @"}

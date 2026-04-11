@@ -4,22 +4,25 @@ import { TextLoop } from "@/components/motion-primitives/text-loop";
 import SpotifyPlayer from "./SpotifyPlayer";
 const Profile = () => {
   return (
-    <div className="flex flex-1 w-full  flex-col items-center border-t border-b  border-neutral-100 dark:bg-black sm:items-start">
-      <div className="border-r flex w-2xl  mx-auto border-neutral-200 border-l ">
+    <div className="flex flex-1 w-full  flex-col items-center border-t border-b  border-neutral-100 dark:border-neutral-800 dark:bg-[#09090B] sm:items-start">
+      <div className="border-r flex w-2xl  mx-auto border-neutral-200 dark:border-neutral-800 border-l ">
         {/* Image */}
-        <div className="h-35 w-35 shrink-0   border-r border-neutral-200">
+        <div className="relative h-35 w-35 shrink-0 border-r border-neutral-200 dark:border-neutral-800 overflow-hidden rounded-full">
           <Image
             src={displayPicture}
             alt="Hitesh Suthar Gibli Picture"
-            className="rounded-full w-full h-full object-fit  "
+            className="w-full h-full object-cover"
           />
+
+          {/* Progressive blur overlay */}
+          <div className="pointer-events-none absolute inset-0 opacity-0 hover:opacity-100 backdrop-blur-md [mask-image:linear-gradient(to_bottom,transparent,black)]" />
         </div>
         <div className="flex flex-col  w-full">
           <div className="overflow-hidden flex items-baseline-last flex-col h-full">
             <SpotifyPlayer />
           </div>
           <div className="flex flex-col w-full ">
-            <div className=" text-4xl font-[Neue] flex items-center gap-1 tracking-tight border-t border-b border-neutral-200  font-bold text-neutral-900  px-3 h-fit w-full">
+            <div className=" text-4xl font-[Neue] flex items-center gap-1 tracking-tight border-t border-b border-neutral-200  dark:border-neutral-900 font-bold dark:text-neutral-200 text-neutral-900  px-3 h-fit w-full">
               <p>Hitesh Suthar</p>
               <svg
                 viewBox="0 0 22 22"
@@ -33,15 +36,15 @@ const Profile = () => {
                 </g>
               </svg>
             </div>
-            <div className="px-3  overflow-hidden  border-neutral-200 h-fit w-full">
+            <div className="px-3  overflow-hidden dark:border-neutral-800  border-neutral-200 h-fit w-full">
               <TextLoop>
-                <span className="font-mono font-light text-sm">
+                <span className="font-mono dark:text-neutral-500 font-light text-sm">
                   Frotend React Dev
                 </span>
-                <span className="font-mono font-light text-sm">
+                <span className="font-mono dark:text-neutral-500 font-light text-sm">
                   Crafting Experience
                 </span>
-                <span className="font-mono font-light text-sm">
+                <span className="font-mono dark:text-neutral-500 font-light text-sm">
                   Currently Cooking Something
                 </span>
               </TextLoop>

@@ -96,3 +96,8 @@ body {
     transform: scaleY(0.1);
   }
 }
+
+.dark ::selection{
+  background-color: #e4e4e4;
+  color: #0a0a0a;
+}

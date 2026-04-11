@@ -3,27 +3,38 @@ import BioComponent from "./Components/BioComponent";
 import Divider from "./Components/Divider";
 import Navbar from "./Components/HeroPage/Navbar";
 import Profile from "./Components/Profile/Profile";
+import { ThemeProvider } from "@/app/Components/theme-provider";
+
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col flex-1 items-center justify-center font-sans dark:bg-black mt-2">
-        {/* Header */}
-        <Navbar />
-        {/* Block */}
-        <div
-          style={{
-            backgroundColor: "#fff",
-            backgroundImage: "radial-gradient(#dcdcdc 1px, transparent 1px)",
-            backgroundSize: "18px 18px",
-          }}
-          className="border-gray-200 border-r  border-l w-2xl h-50"
-        ></div>
-        {/* Profile */}
-        <Profile />
-        <Divider />
-        {/* Bio */}
-        <BioComponent />
-      </div>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <div className="flex flex-col flex-1 items-center justify-center font-sans dark:bg-[#09090B] mt-2">
+          {/* Header */}
+          <Navbar />
+          {/* Block */}
+          <div
+            className="
+    border-gray-200 dark:border-neutral-800 border-r border-l
+    w-2xl h-50
+    bg-white dark:bg-[#09090B]
+    [radial-gradient(#dcdcdc_1px,transparent_1px)]
+    dark:[background-image:radial-gradient(#333_1px,transparent_1px)]
+    [background-size:18px_18px]
+  "
+          ></div>
+          {/* Profile */}
+          <Profile />
+          <Divider />
+          {/* Bio */}
+          <BioComponent />
+        </div>
+      </ThemeProvider>
     </>
   );
 }
