@@ -7,15 +7,14 @@ const Profile = () => {
     <div className="flex flex-1 w-full  flex-col items-center border-t border-b  border-neutral-100 dark:border-neutral-800 dark:bg-[#09090B] sm:items-start">
       <div className="border-r flex w-2xl  mx-auto border-neutral-200 dark:border-neutral-800 border-l ">
         {/* Image */}
-        <div className="relative h-35 w-35 shrink-0 border-r border-neutral-200 dark:border-neutral-800 overflow-hidden rounded-full">
+        <div className="relative h-35 w-35 shrink-0 border-r border-neutral-200 dark:border-neutral-800   overflow-hidden ">
           <Image
             src={displayPicture}
             alt="Hitesh Suthar Gibli Picture"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-full"
           />
 
           {/* Progressive blur overlay */}
-          <div className="pointer-events-none absolute inset-0 opacity-0 hover:opacity-100 backdrop-blur-md [mask-image:linear-gradient(to_bottom,transparent,black)]" />
         </div>
         <div className="flex flex-col  w-full">
           <div className="overflow-hidden flex items-baseline-last flex-col h-full">

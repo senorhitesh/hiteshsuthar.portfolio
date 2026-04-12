@@ -1,4 +1,5 @@
 "use client";
+import About from "./Components/About";
 import BioComponent from "./Components/BioComponent";
 import Divider from "./Components/Divider";
 import Navbar from "./Components/HeroPage/Navbar";
@@ -20,19 +21,19 @@ export default function Home() {
           {/* Block */}
           <div
             className="
-    border-gray-200 dark:border-neutral-800 border-r border-l
-    w-2xl h-50
-    bg-white dark:bg-[#09090B]
-    [radial-gradient(#dcdcdc_1px,transparent_1px)]
-    dark:[background-image:radial-gradient(#333_1px,transparent_1px)]
-    [background-size:18px_18px]
-  "
+            border-gray-200 dark:border-neutral-800 border-r border-l
+              w-2xl h-50
+            bg-white dark:bg-[#09090B]
+              [radial-gradient(#dcdcdc_1px,transparent_1px)]
+              dark:bg-[radial-gradient(#333_1px, transparent_1px)]
+              bg-size-[18px_18px]"
           ></div>
           {/* Profile */}
           <Profile />
           <Divider />
-          {/* Bio */}
           <BioComponent />
+          <Divider />
+          <About />
         </div>
       </ThemeProvider>
     </>

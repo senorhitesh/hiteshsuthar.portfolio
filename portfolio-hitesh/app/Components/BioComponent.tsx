@@ -1,4 +1,14 @@
-import { Building2, Code, Copy, LucideIcon, Mail, Map } from "lucide-react";
+"use client";
+import {
+  Building2,
+  Check,
+  Code,
+  Copy,
+  LucideIcon,
+  Mail,
+  Map,
+} from "lucide-react";
+import { useEffect, useState } from "react";
 
 const BioCard = ({
   Icon,
@@ -12,7 +22,16 @@ const BioCard = ({
   copy?: boolean;
 }) => {
   const textToCopy = title;
-  console.log(navigator.clipboard);
+  const [isClicked, setisClicked] = useState<boolean>(false);
+
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      setisClicked(false);
+    }, 1000);
+
+    return () => clearTimeout(timeOut);
+  }, [isClicked]);
+
   return (
     <div className="flex group items-center gap-2">
       <div className="w-6 text-neutral-600 h-6 rounded-md ring-2 ring-neutral-200 dark:ring-neutral-800 dark:border-neutral-900 dark:text-neutral-400 dark:bg-neutral-900 border border-neutral-50  flex items-center justify-center bg-gray-100">
@@ -28,12 +47,17 @@ const BioCard = ({
       </p>
       {copy && (
         <div
-          onClick={() => {
-            navigator.clipboard.writeText(textToCopy);
+          onClick={async () => {
+            try {
+              await navigator.clipboard.writeText(textToCopy);
+              setisClicked(true);
+            } catch (err) {
+              console.error("Copy failed", err);
+            }
           }}
-          className="w-6 opacity-0 group-hover:opacity-100 transition  dark:border-neutral-900 text-neutral-400 h-6 rounded-md dark:text-neutral-400 dark:bg-neutral-900 border hover:text-neutral-500    bg-white    flex items-center justify-center "
+          className="w-6 opacity-0  border-neutral-200 group-hover:opacity-100 transition  dark:border-neutral-900 text-neutral-400 h-6 rounded-md dark:text-neutral-400 dark:bg-neutral-900 border hover:text-neutral-500    bg-white    flex items-center justify-center "
         >
-          <Copy size={16} />
+          {isClicked ? <Check /> : <Copy size={16} />}
         </div>
       )}
     </div>
