@@ -3,6 +3,7 @@ import About from "./Components/About";
 import BioComponent from "./Components/BioComponent";
 import Divider from "./Components/Divider";
 import Navbar from "./Components/HeroPage/Navbar";
+import Links from "./Components/Links";
 import Profile from "./Components/Profile/Profile";
 import { ThemeProvider } from "@/app/Components/theme-provider";
 
@@ -34,6 +35,7 @@ export default function Home() {
           <BioComponent />
           <Divider />
           <About />
+          <Links />
         </div>
       </ThemeProvider>
     </>
